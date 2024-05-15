@@ -1,4 +1,4 @@
-import './CoreConcepts.css';
+import "./CoreConcepts.css";
 
 // first way
 // export default function CoreConcepts(props){
@@ -22,7 +22,7 @@ import './CoreConcepts.css';
   );
 } */
 
-// second way passs a variable 
+// second way passs a variable
 // export default function CoreConcepts({concept}){
 //   return (
 //     <li>
@@ -34,13 +34,13 @@ import './CoreConcepts.css';
 // }
 
 // using variable and distructuring
-export default function CoreConcepts({concept}){
-    const {title,description,image} = concept;
-    return (
-      <li>
-        <img src={image} alt={title} />
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </li>
-    );
-  }
+export default function CoreConcepts({ concept }) {
+  const { title, description, image } = concept;
+  return (
+    <li>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </li>
+  );
+}
