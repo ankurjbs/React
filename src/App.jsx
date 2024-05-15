@@ -3,9 +3,10 @@ import { useState } from "react";
 import TabButton from "./components/TabButton.jsx";
 import Header from "./components/Header/Header.jsx";
 import { CORE_CONCEPTS } from "./data";
+import { EXAMPLES } from "./data";
 
 function App() {
-  const [selectedValue,setSelectedValue] = useState('Please Click any Tab');
+  const [selectedValue,setSelectedValue] = useState('components');
   function selectHandler(value){
     setSelectedValue(value);
   }
@@ -36,13 +37,22 @@ function App() {
           <h2>Examples</h2>
             <menu >
 
-              <TabButton onSelect={()=>selectHandler('Components')}>Components </TabButton>
-              <TabButton onSelect={()=>selectHandler('JSX')}>JSX </TabButton>
-              <TabButton onSelect={()=>selectHandler('Props')}>Props </TabButton>
-              <TabButton onSelect={()=>selectHandler('State')}>State </TabButton>
+              <TabButton onSelect={()=>selectHandler('components')}>Components</TabButton>
+              <TabButton onSelect={()=>selectHandler('jsx')}>JSX </TabButton>
+              <TabButton onSelect={()=>selectHandler('props')}>Props </TabButton>
+              <TabButton onSelect={()=>selectHandler('state')}>State </TabButton>
             </menu>
           </section>
-         {selectedValue}
+          <div id="tab-content">
+          <h2>{EXAMPLES[selectedValue].title}</h2>
+          <p>{EXAMPLES[selectedValue].description}</p>
+          <pre>
+            <code>
+            {EXAMPLES[selectedValue].code}
+            </code>
+          </pre>
+          </div>
+          
         </main>
       </div>
     </>
