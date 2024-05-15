@@ -6,9 +6,21 @@ import { CORE_CONCEPTS } from "./data";
 import { EXAMPLES } from "./data";
 
 function App() {
-  const [selectedValue,setSelectedValue] = useState('components');
+  const [selectedValue,setSelectedValue] = useState();
   function selectHandler(value){
     setSelectedValue(value);
+  }
+  let tabContent = 'Please Select any TAB';
+  if(selectedValue){
+    tabContent = (<div id="tab-content">
+    <h2>{EXAMPLES[selectedValue].title}</h2>
+    <p>{EXAMPLES[selectedValue].description}</p>
+    <pre>
+      <code>
+      {EXAMPLES[selectedValue].code}
+      </code>
+    </pre>
+  </div>);
   }
   return (
     <>
@@ -43,16 +55,8 @@ function App() {
               <TabButton onSelect={()=>selectHandler('state')}>State </TabButton>
             </menu>
           </section>
-          <div id="tab-content">
-          <h2>{EXAMPLES[selectedValue].title}</h2>
-          <p>{EXAMPLES[selectedValue].description}</p>
-          <pre>
-            <code>
-            {EXAMPLES[selectedValue].code}
-            </code>
-          </pre>
-          </div>
           
+          {tabContent}
         </main>
       </div>
     </>
