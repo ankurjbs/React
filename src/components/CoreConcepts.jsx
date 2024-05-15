@@ -1,15 +1,15 @@
 import './CoreConcepts.css';
 
 // first way
-/* function CoreConcepts(props){
-  return (
-    <li>
-      <img src={props.image} alt={props.title} />
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
-    </li>
-  );
-} */
+// export default function CoreConcepts(props){
+//   return (
+//     <li>
+//       <img src={props.image} alt={props.title} />
+//       <h3>{props.title}</h3>
+//       <p>{props.description}</p>
+//     </li>
+//   );
+// }
 
 // using distructuring method
 /* function CoreConcepts({image,description,title}){
@@ -22,16 +22,16 @@ import './CoreConcepts.css';
   );
 } */
 
-/* // second way passs a variable 
-function CoreConcepts({concept}){
-  return (
-    <li>
-      <img src={concept.image} alt={concept.title} />
-      <h3>{concept.title}</h3>
-      <p>{concept.description}</p>
-    </li>
-  );
-} */
+// second way passs a variable 
+// export default function CoreConcepts({concept}){
+//   return (
+//     <li>
+//       <img src={concept.image} alt={concept.title} />
+//       <h3>{concept.title}</h3>
+//       <p>{concept.description}</p>
+//     </li>
+//   );
+// }
 
 // using variable and distructuring
 export default function CoreConcepts({concept}){
