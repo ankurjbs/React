@@ -2,7 +2,7 @@ import TabButton from "./TabButton";
 import { EXAMPLES } from "../data";
 import { useState } from "react";
 import Sections from "./Sections";
-import Tab from "./Tab";
+
 export default function Examples() {
   const [selectedValue, setSelectedValue] = useState();
   function selectHandler(value) {
@@ -22,7 +22,8 @@ export default function Examples() {
   }
   return (
     <Sections id="examples">
-      <Tab buttons={<> <TabButton
+      <menu>
+        <TabButton
           isSelected={selectedValue === "components"}
           onClick={() => selectHandler("components")}
         >
@@ -45,10 +46,9 @@ export default function Examples() {
           onClick={() => selectHandler("state")}
         >
           State
-        </TabButton></>}>
+        </TabButton>
+      </menu>
       {tabContent}
-      </Tab>
-     
     </Sections>
   );
 }
